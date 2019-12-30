@@ -57,7 +57,7 @@ def number_points_scored(player_name)
 
   end
  end
-  
+end
 
 
 
