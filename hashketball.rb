@@ -51,17 +51,23 @@ end
 
 
  
- def num_points_scored(player_name)
+ def num_points_scored(players_name)
   
-  game_hash.each do |origin , t_info|
-    t_info.each do |t_name , hard_name|
-      binding.pry
-  
+  game_hash.each do |place , team|
+     team.each do |attribute , data|
+       if attribute == :players
+         data.each do |player|
+           if player[:player_name] == players_name
+             return player[:points]
+     end        
+    end
+   end 
   end
  end
 end
   
-     
+  
+   
        
        
  
