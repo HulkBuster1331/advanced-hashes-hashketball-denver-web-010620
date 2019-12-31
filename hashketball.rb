@@ -8,7 +8,7 @@ def game_hash
      :team_name => "Brooklyn Nets",
       :colors => ["black" , "white"],
        :players => [
-        {player_name: "Allen Anderson"   , number: 0    , shoe: 16   , points: 22   , rebounds: 12   , assists: 12   , steals: 3 , blocks: 1  , slam_dunks: 1    
+        {player_name: "Alan Anderson"   , number: 0    , shoe: 16   , points: 22   , rebounds: 12   , assists: 12   , steals: 3 , blocks: 1  , slam_dunks: 1    
         },
         
         {player_name: "Reggie Evans"   , number: 14    , shoe: 14   , points: 12   , rebounds: 12   , assists: 12   , steals: 12   , blocks: 12  , slam_dunks: 7  
@@ -49,31 +49,34 @@ end
 
 
 
-def shoe_size(player_number)
+def num_points_scored(player_number)
   i = 0 
-  
-  while game_hash[:home][:players][:shoes] = player_number do
-    
+   game_hash.each do |key, value|
+     binding.pry
+  end 
+end
+   
 
-  
-  
-end
+# def team_colors(team_name)
    
-   
-   
-   
- def team_colors(team_name)
-   i = 0
-   while i < game_hash.length do
+# end
+ 
+ 
+ 
+ 
+ 
+# def team_colors(team_name)
+#   i = 0
+#   while i < game_hash.length do
      
-      colors = game_hash[:home][:colors]
+#       colors = game_hash[:home][:colors]
         
-       if game_hash[:home][:colors] == team_name
-         return colors
-    end 
-   i += 0
-  end  
-end
+#       if game_hash[:home][:colors] == team_name
+#         return colors
+#     end 
+#   i += 0
+#   end  
+# end
    
   
 
