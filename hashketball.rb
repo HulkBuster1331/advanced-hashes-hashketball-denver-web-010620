@@ -28,7 +28,7 @@ def game_hash
      :team_name => "Charlotte Hornets",
       :colors => ["turquoise", "purple"],
        :players => [
-        {player_name: "Jeff Adrien"   , number: 4    , shoe: 18   , points: 12   , rebounds: 1   , assists: 1   , steals: 2   , blocks: 7  , slam_dunks: 2 
+        {player_name: "Jeff Adrien"   , number: 4    , shoe: 18   , points: 10   , rebounds: 1   , assists: 1   , steals: 2   , blocks: 7  , slam_dunks: 2 
         },
         
         {player_name: "Bismack Biyombo"   , number: 0    , shoe: 16   , points: 12  , rebounds: 4   , assists: 7   , steals: 22   , blocks: 15 , slam_dunks: 10 
@@ -55,17 +55,23 @@ def num_points_scored(name)
       team_info[:players].each do |player|
         if name == player[:player_name]
      
-      player[:points]
-     
-   end      
-  end 
- end
-end
-   
+      return player[:points]
+     end      
+   end 
+  end
+ end  
 
-# def team_colors(team_name)
-   
-# end
+ def team_colors(team_name)
+   game_hash.each do |team_place, team_info|
+      team_info[:players].each do |player|
+        if name == player[:player_name]
+       
+      return player[:points]
+     end      
+   end 
+  end
+ end  
+ end
  
  
  
