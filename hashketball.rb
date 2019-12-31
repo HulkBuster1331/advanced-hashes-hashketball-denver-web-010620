@@ -49,11 +49,16 @@ end
 
 
 
-def num_points_scored(player_number)
-  i = 0 
-   game_hash.each do |key, value|
+def num_points_scored(name)
+   
+   game_hash.each do |team_place, team_info|
+      team_info[:players].each do |player|
+        
+     
      binding.pry
+     
   end 
+ end
 end
    
 
