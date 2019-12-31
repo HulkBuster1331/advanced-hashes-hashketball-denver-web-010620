@@ -49,16 +49,33 @@ end
 
 
 
-def number_points_scored(player_name)
+def shoe_size(player_number)
+  i = 0 
+  
+  while game_hash[:home][:players][:shoes] = player_number do
     
-    game_hash.each do |place, team|
-      team.each do |attribute, data|
-   
-    binding.pry
 
-  end
- end
+  
+  
 end
+   
+   
+   
+   
+ def team_colors(team_name)
+   i = 0
+   while i < game_hash.length do
+     
+      colors = game_hash[:home][:colors]
+        
+       if game_hash[:home][:colors] == team_name
+         return colors
+    end 
+   i += 0
+  end  
+end
+   
+  
 
 
 
