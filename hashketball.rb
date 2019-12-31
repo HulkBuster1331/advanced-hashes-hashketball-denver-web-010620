@@ -49,51 +49,22 @@ end
 
 
 
-def num_points_scored(name)
-   
-   game_hash.each do |team_place, team_info|
-      team_info[:players].each do |player|
-        if name == player[:player_name]
-     
-      return player[:points]
-     end      
-   end 
+
+ 
+ def num_points_scored(player_name)
+  
+  game_hash.each do |origin , t_info|
+    t_info.each do |t_name , hard_name|
+      binding.pry
+  
   end
- end  
-
-
-
- def team_colors(name)
-   game_hash.each do |team_name, team_info|
-      team_info[:shoe_size.each do |player|
-        if name == player[:shoe_size]
-       
-      
-   end      
-  end 
-  return shoe_size
  end
 end
- 
- 
- 
- 
- 
- 
- 
-# def team_colors(team_name)
-#   i = 0
-#   while i < game_hash.length do
+  
      
-#       colors = game_hash[:home][:colors]
-        
-#       if game_hash[:home][:colors] == team_name
-#         return colors
-#     end 
-#   i += 0
-#   end  
-# end
-   
+       
+       
+ 
   
 
 
