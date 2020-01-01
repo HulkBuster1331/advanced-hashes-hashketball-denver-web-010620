@@ -84,10 +84,21 @@ end
        
        
 def team_colors(t_name)
-  game_hash do |place , team|
-    binding.pry
-
- 
- 
- 
- 
+  game_hash.each do |place , team|
+    team.each do |attribute, data|
+      data.each do |col_set, colors|
+      binding.pry
+    if place == :home 
+      return place[:colors]
+       else 
+          game_hash.each do |place , team|
+    if place == :away 
+         return place[:colors]
+         
+         
+        end
+       end
+      end 
+     end
+    end  
+   end
