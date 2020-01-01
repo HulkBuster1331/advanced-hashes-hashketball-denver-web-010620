@@ -6,7 +6,7 @@ def game_hash
   
   {:home => {
      :team_name => "Brooklyn Nets",
-      :colors => ["black" , "white"],
+      :colors => ["Black" , "White"],
        :players => [
         {player_name: "Alan Anderson"   , number: 0    , shoe: 16   , points: 22   , rebounds: 12   , assists: 12   , steals: 3 , blocks: 1  , slam_dunks: 1    
         },
@@ -26,7 +26,7 @@ def game_hash
      }, 
    :away => {
      :team_name => "Charlotte Hornets",
-      :colors => ["turquoise", "purple"],
+      :colors => ["Turquoise", "Purple"],
        :players => [
         {player_name: "Jeff Adrien"   , number: 4    , shoe: 18   , points: 10   , rebounds: 1   , assists: 1   , steals: 2   , blocks: 7  , slam_dunks: 2 
         },
@@ -83,22 +83,48 @@ end
 end  
        
        
-def team_colors(t_name)
-  game_hash.each do |place , team|
-    team.each do |attribute, data|
-      data.each do |col_set, colors|
-      binding.pry
-    if place == :home 
-      return place[:colors]
-       else 
-          game_hash.each do |place , team|
-    if place == :away 
-         return place[:colors]
-         
-         
+def team_colors(team_name)
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
+        return team[:colors]
         end
-       end
-      end 
-     end
-    end  
+    end
+end 
+  
+
+def team_names
+  game_hash.map do |place, team|
+     team[:team_name]
+ end
+end
+
+
+# def player_numbers(team_name)
+# player_nums = []
+#   game_hash.each do |place, team|
+#     if team[:team_name] == team_name
+#       team.each do |attribute, data|
+#         if attribute = :players
+#           data.each do |player|
+           
+#             player_nums << player[:number]
+#           end
+#         end      
+#       end
+#     end  
+#   end
+#   player_nums
+# end
+  
+def player_stats(player_name)
+  game_hash.each do |place, team|
+    if team[:player] == player_name
+     team.each do |attribute, data|
+       binding.pry
+       if attribute == :players
+         return data 
+    end 
    end
+  end    
+ end
+end
