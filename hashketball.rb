@@ -83,19 +83,11 @@ end
 end  
        
        
- 
+def team_colors(t_name)
+  game_hash do |place , team|
+    binding.pry
 
  
  
  
  
-
-   
-   
-   
-   
- 
-
-
-
-
