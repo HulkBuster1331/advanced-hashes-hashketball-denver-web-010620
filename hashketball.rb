@@ -11,7 +11,7 @@ def game_hash
         {player_name: "Alan Anderson"   , number: 0    , shoe: 16   , points: 22   , rebounds: 12   , assists: 12   , steals: 3 , blocks: 1  , slam_dunks: 1    
         },
         
-        {player_name: "Reggie Evans"   , number: 14    , shoe: 14   , points: 12   , rebounds: 12   , assists: 12   , steals: 12   , blocks: 12  , slam_dunks: 7  
+        {player_name: "Reggie Evans"   , number: 30    , shoe: 14   , points: 12   , rebounds: 12   , assists: 12   , steals: 12   , blocks: 12  , slam_dunks: 7  
         },
   
         {player_name: "Brook Lopez"  , number: 11    , shoe: 17   , points: 17   , rebounds: 19    , assists: 10   , steals: 3   , blocks: 1  , slam_dunks: 15  
@@ -99,30 +99,32 @@ def team_names
 end
 
 
-# def player_numbers(team_name)
-# player_nums = []
-#   game_hash.each do |place, team|
-#     if team[:team_name] == team_name
-#       team.each do |attribute, data|
-#         if attribute = :players
-#           data.each do |player|
+def player_numbers(team_name)
+ player_nums = []
+   game_hash.each do |place, team|
+     if team[:team_name] == team_name
+       team.each do |attribute, data|
+         if attribute == :players
+           data.each do |player|
            
-#             player_nums << player[:number]
-#           end
-#         end      
-#       end
-#     end  
-#   end
-#   player_nums
-# end
+             player_nums << player[:number]
+           end
+         end      
+       end
+     end  
+   end
+   player_nums
+ end
   
 def player_stats(players_name)
   new_hash = {}
-  game_hash.each do |place, team|
-    team.each do |attiributes, data|
+    game_hash.each do |place, team|
+      team.each do |attiributes, data|
+      
       if attiributes == :players
         data.each do |player|
       if player[:player_name] ==  players_name
+      
         new_hash = player.delete_if do |k , v|
           k == :player_name
              end
@@ -130,11 +132,20 @@ def player_stats(players_name)
           end
         end
       end 
-  end   
+   end   
   new_hash
 end     
     
     
-    
-    
-    
+def big_shoe_rebounds()  
+  game_hash.each do |place, team|
+    team.each do |attributes, data|
+      if attributes == :players 
+        data.each do |player|
+binding.pry
+         
+        end
+      end 
+    end
+  end
+end 
