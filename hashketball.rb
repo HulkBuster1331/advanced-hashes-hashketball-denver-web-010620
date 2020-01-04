@@ -138,14 +138,40 @@ end
     
     
 def big_shoe_rebounds()  
+  shoe_size = 0
+    rebounds = 0
   game_hash.each do |place, team|
     team.each do |attributes, data|
       if attributes == :players 
         data.each do |player|
-binding.pry
-         
+          if player[:shoe] > shoe_size
+            shoe_size = player[:shoe]
+              rebounds = player[:rebounds]
+          
+             end   
+           end  
+         end
+       end 
+    end
+   rebounds  
+  end
+ 
+def most_points_scored()
+  points = 0
+    name = "unknown"
+  game_hash.each do |place, team|
+    team.each do |attributes, data|
+      if attributes == :players 
+        data.each do |player|
+          if player[:points] > points
+            name = player[:player_name]
+          
+            end   
+          end  
         end
       end 
     end
-  end
-end 
+  name
+end
+    
+
