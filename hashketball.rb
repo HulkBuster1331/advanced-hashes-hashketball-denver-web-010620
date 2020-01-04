@@ -184,15 +184,20 @@ def winning_team()
     team.each do |attributes, data|
       if attributes == :players 
         data.each do |player|
-          if player[:points] += points 
-             name = team
-    
+          if game_hash[:home] 
+            player[:points] += home_points 
+             binding.pry
+          if game_hash[:away] 
+            player[:points] += away_points
           
+         
             end   
           end  
         end
+         if home_points < away_points
+            else home_points
+        end
       end 
     end
-  
+  end
 end
-
