@@ -179,23 +179,24 @@ end
 def winning_team()
  home_points = 0
  away_points = 0
-    name = "unknown"
+
   game_hash.each do |place, team|
     team.each do |attributes, data|
       if attributes == :players 
         data.each do |player|
           if game_hash[:home] 
             player[:points] += home_points 
-             binding.pry
+            # binding.pry
           if game_hash[:away] 
             player[:points] += away_points
-          
-         
+      
             end   
           end  
         end
-         if home_points < away_points
-            else home_points
+         if home_points > away_points
+              game_hash[:home][:team_name]
+          else
+              game_hash[:away][:team_name]
         end
       end 
     end
