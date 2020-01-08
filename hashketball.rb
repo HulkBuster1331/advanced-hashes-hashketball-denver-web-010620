@@ -51,35 +51,36 @@ end
 
 
  
- def num_points_scored(players_name)
+def num_points_scored(players_name)
   
   game_hash.each do |place , team|
-     team.each do |attribute , data|
-       if attribute == :players
-         data.each do |player|
-           if player[:player_name] == players_name
-             return player[:points]
-     end        
+    team.each do |attribute , data|
+      
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            return player[:points]
+    end        
     end
-   end 
+  end 
   end
- end
+end
 end
   
   
   def shoe_size(players_name)
   
   game_hash.each do |place , team|
-     team.each do |attribute , data|
-       if attribute == :players
-         data.each do |player|
-           if player[:player_name] == players_name
-             return player[:shoe]
-     end        
+    team.each do |attribute , data|
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            return player[:shoe]
+    end        
     end
-   end 
+  end 
   end
- end
+end
 end  
        
        
@@ -94,28 +95,34 @@ end
 
 def team_names
   game_hash.map do |place, team|
-     team[:team_name]
- end
+    team[:team_name]
+end
 end
 
 
+
+
 def player_numbers(team_name)
- player_nums = []
-   game_hash.each do |place, team|
-     if team[:team_name] == team_name
-       team.each do |attribute, data|
-         if attribute == :players
-           data.each do |player|
+player_nums = []
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
+      team.each do |attribute, data|
+        if attribute == :players
+          data.each do |player|
            
-             player_nums << player[:number]
-           end
-         end      
-       end
-     end  
-   end
-   player_nums
- end
-  
+            player_nums << player[:number]
+          end
+        end      
+      end
+    end  
+  end
+  player_nums
+end
+
+def player_numbers(team_name)
+  game_hash.each do ||
+
+
 def player_stats(players_name)
   new_hash = {}
     game_hash.each do |place, team|
@@ -127,12 +134,12 @@ def player_stats(players_name)
       
         new_hash = player.delete_if do |k , v|
           k == :player_name
-             end
+            end
             end
           end
         end
       end 
-   end   
+  end   
   new_hash
 end     
     
@@ -148,14 +155,16 @@ def big_shoe_rebounds()
             shoe_size = player[:shoe]
               rebounds = player[:rebounds]
           
-             end   
-           end  
-         end
-       end 
+            end  
+        end
+      end 
     end
-   rebounds  
+    rebounds  
   end
  
+
+
+
 def most_points_scored()
   points = 0
     name = "unknown"
@@ -164,7 +173,7 @@ def most_points_scored()
       if attributes == :players 
         data.each do |player|
           if player[:points] > points 
-             name = player[:player_name]
+            name = player[:player_name]
           
             end   
           end  
@@ -177,28 +186,31 @@ end
 
 
 def winning_team()
- home_points = 0
- away_points = 0
+      home_points = 0
+      away_points = 0
+        team_name = "" 
+        game_hash.each do |place, team|
+          team.each do |attributes, data|
+            binding.pry
+            if attributes == :players 
+              data.each do |player|
+                if game_hash[:home] 
+                  player[:points] += home_points 
+                    if game_hash[:away] 
+                       player[:points] += away_points
+                         if home_points > away_points
+                            team_name = game_hash[:home][:team_name]
+                         else
+                          binding.pry
+                            team_name = game_hash[:away][:team_name]
 
-  game_hash.each do |place, team|
-    team.each do |attributes, data|
-      if attributes == :players 
-        data.each do |player|
-          if game_hash[:home] 
-            player[:points] += home_points 
-            # binding.pry
-          if game_hash[:away] 
-            player[:points] += away_points
-      
-            end   
-          end  
+                        end   
+                    end  
+                end
+              end
+            end 
         end
-         if home_points > away_points
-              game_hash[:home][:team_name]
-          else
-              game_hash[:away][:team_name]
-        end
-      end 
     end
-  end
+    team_name
 end
+
