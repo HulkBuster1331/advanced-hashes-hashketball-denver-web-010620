@@ -47,10 +47,41 @@ def game_hash
      }
 end
 
-def num_points_scored(player_name)
- num_points=0
+
+
+def find_player_by_name (player_name)
+  players.find do |player|
+    player[:players_name]== player_name
+   end
+  end
   
 
- return num_points
+
+
+def num_points_scored (player_name)
+  player = find_player_by_name(player_name)
+    player[:player_name] == player_name
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
